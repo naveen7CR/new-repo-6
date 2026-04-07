@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📊 Productivity Tracker</h1>
+        <p>Track habits, goals & progress</p>
+    </header>
+
+    <div class="container">
+
+        <!-- HABIT TRACKER -->
+        <div class="card">
+            <h2>✅ Daily Habits</h2>
+            <input type="text" id="habitInput" placeholder="Add habit">
+            <button onclick="addHabit()">Add Habit</button>
+            <ul id="habitList"></ul>
+        </div>
+
+        <!-- GOALS -->
+        <div class="card">
+            <h2>🎯 Goals</h2>
+            <input type="text" id="goalInput" placeholder="Enter goal">
+            <button onclick="addGoal()">Add Goal</button>
+            <div id="goalContainer"></div>
+        </div>
+
+        <!-- PROGRESS BAR -->
+        <div class="card">
+            <h2>📈 Progress</h2>
+            <div class="progress-box">
+                <div id="progressBar"></div>
+            </div>
+            <button onclick="increaseProgress()">Increase</button>
+            <button onclick="resetProgress()">Reset</button>
+        </div>
+
+        <!-- TIMER -->
+        <div class="card">
+            <h2>⏱ Focus Timer</h2>
+            <h1 id="timer">25:00</h1>
+            <button onclick="startTimer()">Start</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Build consistency 📅</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

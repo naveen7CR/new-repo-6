@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
+
+/* LAYOUT */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px;
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* BUTTON */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #444;
+}
+
+/* LIST */
+ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+li {
+    background: #eee;
+    margin-top: 5px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* GOALS */
+.goal {
+    background: #dff0d8;
+    padding: 10px;
+    margin-top: 10px;
+    border-left: 5px solid green;
+}
+
+/* PROGRESS */
+.progress-box {
+    width: 100%;
+    height: 20px;
+    background: #ddd;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background: green;
+}
+
+/* TIMER */
+#timer {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
