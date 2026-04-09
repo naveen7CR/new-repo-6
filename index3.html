@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Dark Pro | Git Push Terminal</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="window-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+            </div>
+            <div class="terminal-title">git push --force-with-lease</div>
+            <div class="terminal-icons">
+                <i class="fas fa-expand"></i>
+            </div>
+        </div>
+
+        <div class="terminal-body">
+            <div class="repo-info-bar">
+                <span><i class="fab fa-github"></i> octocat/awesome-repo</span>
+                <span class="branch"><i class="fas fa-code-branch"></i> main → origin/main</span>
+                <span class="status-badge" id="syncStatus">● Synced</span>
+            </div>
+
+            <div class="split-layout">
+                <!-- Left: File Explorer -->
+                <div class="file-explorer">
+                    <div class="explorer-header">
+                        <i class="fas fa-folder-open"></i> CHANGES
+                        <span class="change-count" id="changeCount">3</span>
+                    </div>
+                    <div class="file-tree" id="fileTree">
+                        <div class="file-item unstaged" data-file="src/components/Header.jsx">
+                            <i class="fas fa-file-code"></i>
+                            <span>Header.jsx</span>
+                            <span class="status-icon">M</span>
+                        </div>
+                        <div class="file-item unstaged" data-file="src/styles/dark.css">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>dark.css</span>
+                            <span class="status-icon">A</span>
+                        </div>
+                        <div class="file-item unstaged" data-file="package.json">
+                            <i class="fab fa-js"></i>
+                            <span>package.json</span>
+                            <span class="status-icon">M</span>
+                        </div>
+                        <div class="file-item unstaged" data-file="README.md">
+                            <i class="fas fa-book"></i>
+                            <span>README.md</span>
+                            <span class="status-icon">D</span>
+                        </div>
+                    </div>
+
+                    <div class="action-bar">
+                        <button class="term-btn" id="stageSelectedBtn">
+                            <i class="fas fa-plus-circle"></i> Stage Selected
+                        </button>
+                        <button class="term-btn" id="stageAllBtn">
+                            <i class="fas fa-layer-group"></i> Stage All
+                        </button>
+                    </div>
+
+                    <div class="staged-section">
+                        <div class="explorer-header">
+                            <i class="fas fa-check-circle"></i> STAGED
+                            <span class="change-count" id="stagedCount">0</span>
+                        </div>
+                        <div id="stagedList" class="staged-list">
+                            <div class="empty-staged">~ No files staged yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Terminal Output -->
+                <div class="terminal-output-area">
+                    <div class="output-header">
+                        <i class="fas fa-terminal"></i> git log --oneline
+                    </div>
+                    <div class="output-content" id="terminalOutput">
+                        <div class="output-line">$ git status</div>
+                        <div class="output-line">On branch main</div>
+                        <div class="output-line">Your branch is up to date with 'origin/main'.</div>
+                        <div class="output-line">Changes not staged for commit:</div>
+                        <div class="output-line"> (use "git add &lt;file&gt;...")</div>
+                        <div class="output-line"><span class="prompt">></span> Ready for commands</div>
+                    </div>
+
+                    <div class="commit-bar">
+                        <input type="text" id="commitMsgInput" placeholder="feat(ui): add responsive navigation"
+                            class="commit-input-term">
+                        <button id="commitBtnTerm" class="commit-btn">
+                            <i class="fas fa-check"></i> Commit
+                        </button>
+                    </div>
+
+                    <div class="push-bar">
+                        <button id="pushBtnTerm" class="push-btn-term">
+                            <i class="fab fa-git-alt"></i> git push origin main
+                        </button>
+                        <div class="push-stats">
+                            <span><i class="fas fa-code"></i> <span id="commitTotal">4</span> commits</span>
+                            <span><i class="fas fa-cloud-upload-alt"></i> <span id="pushStatus">Ready</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+
+</html>
