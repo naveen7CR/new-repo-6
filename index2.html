@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>GitFlow Studio | Push with Elegance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="badge">
+                <i class="fab fa-git-alt"></i>
+                <span>GIT PUSH STUDIO</span>
+            </div>
+            <h1>git push <span class="highlight">--force-with-lease</span></h1>
+            <p class="sub">Modern, atomic commits • Elegant collaboration</p>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div class="dashboard">
+            <!-- LEFT PANEL: Git Simulation -->
+            <div class="glass-card git-panel">
+                <div class="section-title">
+                    <i class="fas fa-code-branch"></i>
+                    <h2>Repository Console</h2>
+                </div>
+
+                <div class="repo-status">
+                    <div class="status-header">
+                        <i class="fas fa-folder-open"></i>
+                        <span>feature/awesome-ui</span>
+                        <span class="branch-badge">active</span>
+                    </div>
+                    <div class="commit-history" id="commitHistory">
+                        <div class="commit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="commit-detail">
+                                <strong>a1b2c3d</strong> - Initial project scaffold
+                                <span class="commit-time">2 mins ago</span>
+                            </div>
+                        </div>
+                        <div class="commit-item">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="commit-detail">
+                                <strong>e4f5g6h</strong> - Add responsive layout
+                                <span class="commit-time">1 min ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="unstaged-area" id="unstagedArea">
+                        <div class="unstaged-header">
+                            <i class="fas fa-plus-circle"></i> Unstaged changes
+                        </div>
+                        <div class="file-list" id="unstagedFiles">
+                            <div class="file-chip" data-file="src/app.js">📄 src/app.js</div>
+                            <div class="file-chip" data-file="styles/main.css">🎨 styles/main.css</div>
+                            <div class="file-chip" data-file="README.md">📘 README.md</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="stageAllBtn">
+                        <i class="fas fa-inbox"></i> Stage All Changes
+                    </button>
+                    <button class="btn btn-secondary" id="commitBtn" disabled>
+                        <i class="fas fa-check-double"></i> Commit Staged
+                    </button>
+                </div>
+
+                <div class="staged-area" id="stagedArea">
+                    <div class="staged-header">
+                        <i class="fas fa-layer-group"></i> Staged changes (ready to commit)
+                    </div>
+                    <div class="staged-files" id="stagedFilesList">
+                        <div class="empty-staged">✨ No staged files. Click "Stage All"</div>
+                    </div>
+                </div>
+
+                <div class="push-section">
+                    <button class="btn btn-push" id="pushBtn">
+                        <i class="fab fa-git-alt"></i> git push origin main
+                    </button>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: Live Output + Terminal -->
+            <div class="glass-card terminal-panel">
+                <div class="section-title">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Git Output Log</h2>
+                </div>
+                <div class="terminal-output" id="terminalOutput">
+                    <div class="log-line welcome">$ git status — ready for push simulation</div>
+                    <div class="log-line info">✨ Use the left panel to stage, commit, and push.</div>
+                </div>
+                <div class="commit-message-area">
+                    <input type="text" id="commitMessage" placeholder="feat: add stunning animations"
+                        class="commit-input">
+                </div>
+                <div class="stats-panel">
+                    <div class="stat-card">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <span class="stat-label">Commits ahead</span>
+                            <span class="stat-value" id="commitCount">2</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <div>
+                            <span class="stat-label">Last push</span>
+                            <span class="stat-value" id="lastPushStatus">Not pushed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
